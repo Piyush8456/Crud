@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class EmployeesTable : DbMigration
+    public partial class test : DbMigration
     {
         public override void Up()
         {
@@ -18,8 +18,8 @@
                         MobileNumber = c.String(),
                         Email = c.String(),
                         Gender = c.String(),
-                        EmployeeType = c.String(),
-                        JoiningDate = c.DateTime(nullable: false),
+                        Designation = c.String(),
+                        JoiningDate = c.DateTime(),
                     })
                 .PrimaryKey(t => t.EmployeeId);
             

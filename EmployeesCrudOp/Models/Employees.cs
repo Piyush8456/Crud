@@ -23,12 +23,9 @@ namespace EmployeesCrudOp.Models
 
         public string Email { get; set; }
 
-
         public string Gender { get; set; }
 
-        public string[] Genders = new[] { "Male", "Female", };
-
-        public List<SelectListItem> EmployeeType { get; set; }
+        public string Designation { get; set; }
 
         [Display(Name = "Date of Birth")]
         [DataType(DataType.Date)]

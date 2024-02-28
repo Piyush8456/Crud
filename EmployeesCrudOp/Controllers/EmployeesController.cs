@@ -20,17 +20,16 @@ namespace EmployeesCrudOp.Controllers
         {
             var model = new Employees();
 
-            model.EmployeeType = new List<SelectListItem>
+            var items = new List<SelectListItem>
     {
-        new SelectListItem { Text = "FrontEnd Devloper", Value = "FrontEnd Devloper" },
-        new SelectListItem { Text = "BackEnd Devloper", Value = "BackEnd Devloper" },
-        new SelectListItem { Text = "FullStack Devloper", Value = "FullStack Devloper" },
-        new SelectListItem { Text = "Designer", Value = "Designer" },
-        new SelectListItem { Text = "Tester", Value = "Tester" },
-        new SelectListItem { Text = "BDE", Value = "BDE" },
-        new SelectListItem { Text = "HR", Value = "HR" },
-
+        new SelectListItem { Value = "1", Text = "pappu 1" },
+        new SelectListItem { Value = "2", Text = "pppu 2" },
+        new SelectListItem { Value = "3", Text = "pu 3" },
+        // Add more items as needed
     };
+
+            ViewBag.SelectListItems = items;
+
             return View(model);
         }
 
@@ -39,7 +38,7 @@ namespace EmployeesCrudOp.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Employee.Add(Emp.EmployeeType.ToString());
+                db.Employee.Add(Emp);
                 db.SaveChanges();
 
                 return RedirectToAction("Index"); 

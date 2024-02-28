@@ -39,15 +39,6 @@
         </div>
     </div>
 
-    <div class="form-group">
-        <label class="control-label col-md-2">Gender</label>
-        <div class="col-md-10">
-            @foreach (var gender in Model.Genders)
-            {
-                @Html.RadioButtonFor(model => model.Gender, gender, new { @class = "control-label" }) @gender<br />
-            }
-            </div>
-        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -74,9 +65,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.EmployeeType, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Designation, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.EmployeeType, Model.EmployeeType, "Select Employee Type", new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.Designation, (IEnumerable<SelectListItem>)ViewBag.SelectListItems, "Select Item", new { @class = "form-control" })
+
             </div>
         </div>
 

@@ -150,29 +150,29 @@ namespace EmployeesCrudOp.Controllers
 
 
 
-        public ActionResult Delete(String Id)
-        {
-            var Empid = Convert.ToInt32(Id);
-            var Emp = db.Employee.Find(Empid);
+        //public ActionResult Delete(String Id)
+        //{
+        //    var Empid = Convert.ToInt32(Id);
+        //    var Emp = db.Employee.Find(Empid);
 
 
-            var model = new EmployeeViewModel
-            {
-                employeeId = Emp.employeeId,
-                firstName = Emp.firstName,
-                lastName = Emp.lastName,
-                age = Emp.age,
-                gender = Emp.gender,
-                mobileNumber = Emp.mobileNumber,
-                email = Emp.email,
-                employeeType = Emp.employeeType,
-                joiningDate = Emp.joiningDate
-            };
-            return View(model);
+        //    var model = new EmployeeViewModel
+        //    {
+        //        employeeId = Emp.employeeId,
+        //        firstName = Emp.firstName,
+        //        lastName = Emp.lastName,
+        //        age = Emp.age,
+        //        gender = Emp.gender,
+        //        mobileNumber = Emp.mobileNumber,
+        //        email = Emp.email,
+        //        employeeType = Emp.employeeType,
+        //        joiningDate = Emp.joiningDate
+        //    };
+        //    return View(model);
 
-        }
+        //}
 
-        [HttpPost]
+     [HttpGet]
         public ActionResult Delete(int Id)
         {
             var data = db.Employee.Find(Id);

@@ -7,13 +7,13 @@ namespace EmployeesCrudOp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class EmployeesDb : IMigrationMetadata
+    public sealed partial class EmployeesTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(EmployeesDb));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(EmployeesTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "202403041228535_EmployeesDb"; }
+            get { return "202403041650299_EmployeesTable"; }
         }
         
         string IMigrationMetadata.Source

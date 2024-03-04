@@ -52,52 +52,57 @@
             <td>
                 @Html.DisplayFor(modelItem => item.lastName)
             </td>
-            *<td>
-                    @Html.DisplayFor(modelItem => item.age)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.gender)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.mobileNumber)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.email)
-                </td>
-                <td>
-                    @if (item.employeeType == 1)
-                    {
-                        <p> FrontEnd Devloper</p>
-                    }
-                    @if (item.employeeType == 2)
-                    {
-                        <p> BackEnd Devloper</p>
-                    }
+            *
+            <td>
+                @Html.DisplayFor(modelItem => item.age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mobileNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @if (item.employeeType == 1)
+                {
+                    <p> FrontEnd Devloper</p>
+                }
+                @if (item.employeeType == 2)
+                {
+                    <p> BackEnd Devloper</p>
+                }
 
-                    @if (item.employeeType == 3)
-                    {
-                        <p>Designer</p>
-                    }
-                    @if (item.employeeType == 4)
-                    {
-                        <p>Tester</p>
-                    }
-                    @if (item.employeeType == 5)
-                    {
-                        <p>BDE</p>
-                    }
-                    @if (item.employeeType == 6)
-                    {
-                        <p>HR</p>
-                    }
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.joiningDate)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.employeeId }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.employeeId })
-                </td>
+                @if (item.employeeType == 3)
+                {
+                    <p>Designer</p>
+                }
+                @if (item.employeeType == 4)
+                {
+                    <p>Tester</p>
+                }
+                @if (item.employeeType == 5)
+                {
+                    <p>BDE</p>
+                }
+                @if (item.employeeType == 6)
+                {
+                    <p>HR</p>
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.joiningDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.employeeId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.employeeId }, new { onclick = $"return confirm('Are you sure you want to delete this record {item.employeeId}?');" })
+
+            </td>
+
+
         </tr>
     }
 </table>
+

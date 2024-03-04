@@ -146,5 +146,5 @@ D:\mvc\Crud\EmployeesCrudOp\bin\roslyn\vbc.exe.config
 D:\mvc\Crud\EmployeesCrudOp\bin\roslyn\vbc.rsp
 D:\mvc\Crud\EmployeesCrudOp\bin\roslyn\VBCSCompiler.exe
 D:\mvc\Crud\EmployeesCrudOp\bin\roslyn\VBCSCompiler.exe.config
-D:\mvc\Crud\EmployeesCrudOp\obj\Debug\EmployeesCrudOp.Migrations.test.resources
+D:\mvc\Crud\EmployeesCrudOp\obj\Debug\EmployeesCrudOp.Migrations.EmployeesDb.resources
 D:\mvc\Crud\EmployeesCrudOp\obj\Debug\EmployeesCrudOp.csproj.GenerateResource.cache

@@ -1,7 +1,103 @@
-﻿
+﻿@model IEnumerable<EmployeesCrudOp.Models.EmployeeViewModel>
+
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <label>Id</label>
+        </th>
+        <th>
+            <label>Firstname</label>
+        </th>
+        <th>
+            <label>Lastname</label>
+        </th>
+        <th>
+            <label>Age</label>
+        </th>
+        <th>
+            <label>Gender</label>
+        </th>
+        <th>
+            <label>Mobile Number</label>
+        </th>
+        <th>
+            <label>Email</label>
+        </th>
+        <th>
+            <label>Designation</label>
+        </th>
+        <th>
+            <label>Joining Date</label>
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.employeeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.firstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lastName)
+            </td>
+            *<td>
+                    @Html.DisplayFor(modelItem => item.age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.mobileNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+                <td>
+                    @if (item.employeeType == 1)
+                    {
+                        <p> FrontEnd Devloper</p>
+                    }
+                    @if (item.employeeType == 2)
+                    {
+                        <p> BackEnd Devloper</p>
+                    }
+
+                    @if (item.employeeType == 3)
+                    {
+                        <p>Designer</p>
+                    }
+                    @if (item.employeeType == 4)
+                    {
+                        <p>Tester</p>
+                    }
+                    @if (item.employeeType == 5)
+                    {
+                        <p>BDE</p>
+                    }
+                    @if (item.employeeType == 6)
+                    {
+                        <p>HR</p>
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.joiningDate)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.employeeId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.employeeId })
+                </td>
+        </tr>
+    }
+</table>

@@ -16,8 +16,26 @@ namespace EmployeesCrudOp
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Employees", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "Create",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Employees", action = "Create", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+              name: "Edit",
+              url: "{controller}/{action}/{id}",
+              defaults: new { controller = "Employees", action = "Edit", id = UrlParameter.Optional }
+          );
+
+            routes.MapRoute(
+          name: "Delete",
+          url: "{controller}/{action}/{id}",
+          defaults: new { controller = "Employees", action = "Delete", id = UrlParameter.Optional }
+      );
         }
     }
 }

@@ -5,14 +5,14 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<EmployeesCrudOp.Models.EmployeeContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<EmployeesCrudOp.Data.EmployeeContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(EmployeesCrudOp.Models.EmployeeContext context)
+        protected override void Seed(EmployeesCrudOp.Data.EmployeeContext context)
         {
             //  This method will be called after migrating to the latest version.
 

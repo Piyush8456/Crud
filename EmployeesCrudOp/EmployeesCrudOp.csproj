@@ -115,18 +115,18 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Data\Employees.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202402281755401_test.cs" />
-    <Compile Include="Migrations\202402281755401_test.designer.cs">
-      <DependentUpon>202402281755401_test.cs</DependentUpon>
+    <Compile Include="Data\EmployeeContext.cs" />
+    <Compile Include="Migrations\202403041228535_EmployeesDb.cs" />
+    <Compile Include="Migrations\202403041228535_EmployeesDb.designer.cs">
+      <DependentUpon>202403041228535_EmployeesDb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\EmployeeContext.cs" />
-    <Compile Include="Models\Employees.cs" />
+    <Compile Include="Models\EmployeeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewMo\EmployeeVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -139,6 +139,8 @@
     <Content Include="Views\Employees\Create.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -150,8 +152,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202402281755401_test.resx">
-      <DependentUpon>202402281755401_test.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202403041228535_EmployeesDb.resx">
+      <DependentUpon>202403041228535_EmployeesDb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

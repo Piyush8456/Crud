@@ -1,5 +1,6 @@
 ﻿using EmployeesCrudOp.Data;
 using EmployeesCrudOp.Models;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Validation;
@@ -16,34 +17,20 @@ namespace EmployeesCrudOp.Controllers
         EmployeeContext db = new EmployeeContext();
 
 
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, int? page)
         {
-            
+            EmployeeContext db = new EmployeeContext();
+            int pageSize = 5;
+            int pageIndex = page ?? 1;
 
-            List<Employees> list = new List<Employees>();
+            IQueryable<Employees> employeesQuery = db.Employee;
+           employeesQuery = employeesQuery.OrderBy(m => m.firstName);
 
-            List<EmployeeViewModel> modalList = new List<EmployeeViewModel>();
+            var employees = employeesQuery.ToPagedList(pageIndex, pageSize);
 
-           list = db.Employee.ToList();
-
-            foreach (Employees emp in list)
-            {
-                EmployeeViewModel employeeViewModel = new EmployeeViewModel();
-
-                employeeViewModel.employeeId = emp.employeeId;
-                employeeViewModel.firstName = emp.firstName;
-                employeeViewModel.lastName = emp.lastName;
-                employeeViewModel.age = emp.age;
-                employeeViewModel.gender = emp.gender;
-                employeeViewModel.mobileNumber = emp.mobileNumber;
-                employeeViewModel.email = emp.email;
-                employeeViewModel.employeeType = emp.employeeType;
-                employeeViewModel.joiningDate = emp.joiningDate;
-                modalList.Add(employeeViewModel);
-            }
-
-            return View(modalList);
+            return View(employees);
         }
+
 
         [HttpGet]
         public ActionResult Create()

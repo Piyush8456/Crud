@@ -1,4 +1,7 @@
-﻿@model IEnumerable<EmployeesCrudOp.Models.EmployeeViewModel>
+﻿@model PagedList.IPagedList<EmployeesCrudOp.Data.Employees>
+
+@using PagedList.Mvc;
+
 
 @{
     ViewBag.Title = "Index";
@@ -52,7 +55,6 @@
             <td>
                 @Html.DisplayFor(modelItem => item.lastName)
             </td>
-            *
             <td>
                 @Html.DisplayFor(modelItem => item.age)
             </td>
@@ -97,12 +99,14 @@
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.employeeId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.employeeId }, new { onclick = $"return confirm('Are you sure you want to delete this record {item.employeeId}?');" })
-
+                @Html.ActionLink("Delete", "Delete", new { id = item.employeeId }, new { onclick = "return confirm('Are you sure you want to delete this record?');" })
             </td>
-
-
         </tr>
     }
 </table>
+<div id='Paging' style="text-align:center">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+    of @Model.PageCount
 
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</div>

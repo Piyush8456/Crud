@@ -23,7 +23,6 @@ namespace EmployeesCrudOp.Data
 
         public int age { get; set; }
 
-     
         public string mobileNumber { get; set; }
 
         public string email { get; set; }
@@ -35,7 +34,8 @@ namespace EmployeesCrudOp.Data
         public IEnumerable<SelectListItem> employeeTypes { get; set; }
 
         [DataType(DataType.Date)]
-        public DateTime joiningDate { get; set; }
+        public DateTime 
+            joiningDate { get; set; }
 
     }
 }

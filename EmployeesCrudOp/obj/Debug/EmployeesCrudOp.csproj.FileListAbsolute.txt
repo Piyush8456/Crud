@@ -148,3 +148,7 @@ D:\mvc\Crud\EmployeesCrudOp\bin\roslyn\VBCSCompiler.exe
 D:\mvc\Crud\EmployeesCrudOp\bin\roslyn\VBCSCompiler.exe.config
 D:\mvc\Crud\EmployeesCrudOp\obj\Debug\EmployeesCrudOp.Migrations.EmployeesTable.resources
 D:\mvc\Crud\EmployeesCrudOp\obj\Debug\EmployeesCrudOp.csproj.GenerateResource.cache
+D:\mvc\Crud\EmployeesCrudOp\bin\PagedList.dll
+D:\mvc\Crud\EmployeesCrudOp\bin\PagedList.Mvc.dll
+D:\mvc\Crud\EmployeesCrudOp\bin\PagedList.xml
+D:\mvc\Crud\EmployeesCrudOp\bin\PagedList.Mvc.xml

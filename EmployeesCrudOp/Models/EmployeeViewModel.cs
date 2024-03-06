@@ -20,12 +20,12 @@ namespace EmployeesCrudOp.Models
         public string lastName { get; set; }
 
 
-        [Required(ErrorMessage = "Age is required.")]
+        [Required(ErrorMessage = "A Valid Age Is Required.")]
         [Range(20, 60)]
         public int age { get; set; }
 
 
-        [Required(ErrorMessage = "Please ender valid Mobile number.")]
+        [Required(ErrorMessage = "Please Enter Valid Mobile number.")]
         [StringLength(13, MinimumLength = 10)]
         public string mobileNumber { get; set; }
 
@@ -33,7 +33,7 @@ namespace EmployeesCrudOp.Models
         [EmailAddress]
         public string email { get; set; }
 
-        [Required(ErrorMessage = "Gender is required.")]
+        [Required(ErrorMessage = "Gender is Required.")]
         public string gender { get; set; }
 
         [Required(ErrorMessage = "Please Choose Employee Role.")]
@@ -41,9 +41,10 @@ namespace EmployeesCrudOp.Models
 
         public IEnumerable<SelectListItem> employeeTypes { get; set; }
 
-        [Required(ErrorMessage = "Joining Date is required.")]
+        [Required(ErrorMessage = "Joining Date Is Required.")]
         [DataType(DataType.Date)]
         public DateTime joiningDate { get; set; }
 
+    
     }
 }
